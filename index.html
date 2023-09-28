@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Movie Tickets, Plays, Sports, Events & Cinemas near Bengaluru - BookMyShow
+    </title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/42b4136dfc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      a {
+        color: #b4b4b3;
+        /* color: #ebebeb; */
+      }
+      a:hover {
+        color: white;
+        text-decoration: none;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        display: inline;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar1">
+        <div class="leftbar1">
+          <img src="images\Logo.png" alt="Logo image" width="120" height="38" />
+          <i class="fa-solid fa-magnifying-glass" style="color: #333545"></i>
+          <input
+            id="searchbar"
+            type="text"
+            placeholder="        Search for Movies, Events, Plays, Sports and Activities"
+          />
+        </div>
+
+        <div class="rightbar1">
+          <select id="menu" name="menu">
+            <option value="option1">Bengaluru</option>
+            <option value="option2">Mumbai</option>
+            <option value="option3">Delhi</option>
+            <option value="option4">Chennai</option>
+            <option value="option5">Hyderabad</option>
+          </select>
+          <button type="button">Sign in</button>
+          <i class="fa-solid fa-bars" style="color: #ffffff"></i>
+        </div>
+      </nav>
+
+      <nav class="navbar2">
+        <div class="leftbar2">
+          <ul>
+            <li>
+              <a href=""> Movies </a>
+            </li>
+            <li>
+              <a href=""> Stream </a>
+            </li>
+            <li>
+              <a href=""> Events </a>
+            </li>
+            <li>
+              <a href=""> Plays</a>
+            </li>
+            <li>
+              <a href=""> Sports </a>
+            </li>
+            <li>
+              <a href=""> Activities </a>
+            </li>
+            <li>
+              <a href=""> Buzz </a>
+            </li>
+            <li>
+              <img
+                width="225px"
+                height="16px"
+                src="https://assets-in.bmscdn.com/static/2023/08/cwc23.png"
+                alt="dsad"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="rightbar2">
+          <ul>
+            <li>
+              <a href="">ListYourShow</a>
+            </li>
+            <li>
+              <a href="">Corporates</a>
+            </li>
+            <li>
+              <a href="">Offers</a>
+            </li>
+            <li>
+              <a href="">Gift Cards</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- <div class="banner">
+    <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1694584190884_gauravkapoorblrdesktop.jpg" alt="">
+</div> -->
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        <div class="slide">
+          <img
+            src="https://assets-in.bmscdn.com/promotions/cms/creatives/1694584190884_gauravkapoorblrdesktop.jpg"
+            alt="Image 1"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://assets-in.bmscdn.com/promotions/cms/creatives/1695071372300_web.jpg"
+            alt="Image 2"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://assets-in.bmscdn.com/promotions/cms/creatives/1695717122358_spacejamdesktop.jpg"
+            alt="Image 3"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="https://assets-in.bmscdn.com/promotions/cms/creatives/1693472198837_iccdesktop.jpg"
+            alt="Image 4"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="dot-container">
+      <span class="dot" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
+    </div>
+
+    <!-- Jvasript for slider aniamation -->
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      const sliderWrapper = document.querySelector(".slider-wrapper");
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+      }
+
+      function updateSlider() {
+        sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update dot indicators
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.add("active");
+          } else {
+            dot.classList.remove("active");
+          }
+        });
+      }
+
+      setInterval(nextSlide, 3000);
+    </script>
+
+    <!-- <script>
+    // JavaScript for automatic sliding
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    }
+
+    function updateSlider() {
+        sliderWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Change slide every 3 seconds
+    setInterval(nextSlide, 3000);
+</script> -->
+
+    <div class="banner">
+      <img
+        src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120:q-80/slug-navratri-collection-202309251241.jpg"
+        alt=""
+      />
+    </div>
+    <div class="cards-container">
+      <h2><strong>Recommended Movies</strong></h2>
+      <div class="cards">
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OC40LzEwICA0ODkuNksgVm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00330424-htbdqyftsc-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">Jawan</p>
+          <p class="card-info">Action/Thriller</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OC45LzEwICAyNC4zSyBWb3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00329345-qefkzgdjuq-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">Saptha Sagaradhaache Ello</p>
+          <p class="card-info">Drama, Romantic</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OC45LzEwICAxNjMuOUsgVm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00347867-djqmqlflry-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">Oppenheimer</p>
+          <p class="card-info">Biography, Drama, Historical</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-Ni45LzEwICA0NC40SyBWb3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00363916-xfaaanbjex-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">The NUN 2</p>
+          <p class="card-info">Horror, Mystery, Thriller</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-MTYuOUsgTGlrZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00344388-nkebhqcwdu-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">The Vaccine War</p>
+          <p class="card-info">Drama</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner">
+      <img
+        src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120:q-80/stream-leadin-web-collection-202210241242.png"
+        alt=""
+      />
+    </div>
+
+    <div class="cards-container">
+      <h2><strong>Best of Live Events</strong></h2>
+      <div class="events-cards">
+        <img
+          id="events-img1"
+          src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTAwKyBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/workshop-and-more-web-collection-202211140440.png"
+          alt=""
+        />
+        <img
+          src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/kids-zone-collection-202211140440.png"
+          alt=""
+        />
+        <img
+          src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTEwKyBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/comedy-shows-collection-202211140440.png"
+          alt=""
+        />
+        <img
+          src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-ODArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/music-shows-collection-202211140440.png"
+          alt=""
+        />
+        <img
+          src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-NCBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/esports-collection-202211140440.png"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div id="prem-container" class="cards-container">
+      <div class="prem-card">
+        <img
+          src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120:q-80/premiere-banner-web-collection-202208191200.png"
+          alt=""
+        />
+        <div class="prem-heading">
+          <h2><strong>Premieres</strong></h2>
+          <p>Brand new releases every Friday</p>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card-container">
+          <img
+            id="prem-img"
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@bms_premiere_v1.png,oit-false,ofo-bottom_left:q-80/et00369902-kksjcfptns-portrait.jpg"
+            alt=""
+          />
+          <p class="prem-card-title">Transfusion</p>
+          <p class="prem-card-info">English</p>
+        </div>
+        <div class="card-container">
+          <img
+            id="prem-img"
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@bms_premiere_v1.png,oit-false,ofo-bottom_left:q-80/et00370388-qpbtrsbdjy-portrait.jpg"
+            alt=""
+          />
+          <p class="prem-card-title">Rememory</p>
+          <p class="prem-card-info">English</p>
+        </div>
+        <div class="card-container">
+          <img
+            id="prem-img"
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@bms_premiere_v1.png,oit-false,ofo-bottom_left:q-80/et00369480-jahrezdksv-portrait.jpg"
+            alt=""
+          />
+          <p class="prem-card-title">Smother - S3</p>
+          <p class="prem-card-info">English</p>
+        </div>
+        <div class="card-container">
+          <img
+            id="prem-img"
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@bms_premiere_v1.png,oit-false,ofo-bottom_left:q-80/et00358316-agqfkaadxl-portrait.jpg"
+            alt=""
+          />
+          <p class="prem-card-title">Meg 2 - The Trench</p>
+          <p class="prem-card-info">English</p>
+        </div>
+        <div class="card-container">
+          <img
+            id="prem-img"
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:oi-discovery-catalog@@icons@@bms_premiere_v1.png,oit-false,ofo-bottom_left:q-80/et00369790-yjyermjgad-portrait.jpg"
+            alt=""
+          />
+          <p class="prem-card-title">First Cow</p>
+          <p class="prem-card-info">English</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add movies duplicate here -->
+    <div id="cards-container2" class="cards-container">
+      <h2><strong>Recommended Movies</strong></h2>
+      <div class="cards">
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OC40LzEwICA0ODkuNksgVm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00330424-htbdqyftsc-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">Jawan</p>
+          <p class="card-info">Action/Thriller</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OC45LzEwICAyNC4zSyBWb3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00329345-qefkzgdjuq-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">Saptha Sagaradhaache Ello</p>
+          <p class="card-info">Drama, Romantic</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-OC45LzEwICAxNjMuOUsgVm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00347867-djqmqlflry-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">Oppenheimer</p>
+          <p class="card-info">Biography, Drama, Historical</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-Ni45LzEwICA0NC40SyBWb3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00363916-xfaaanbjex-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">The NUN 2</p>
+          <p class="card-info">Horror, Mystery, Thriller</p>
+        </div>
+        <div class="card-container">
+          <img
+            src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-MTYuOUsgTGlrZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00344388-nkebhqcwdu-portrait.jpg"
+            alt=""
+          />
+          <p class="card-title">The Vaccine War</p>
+          <p class="card-info">Drama</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <img src="images\Logo_footer.png" alt="" />
+
+      <div class="icons">
+        <i class="fa-brands fa-facebook fa-2x" style="color: #5d5d5f"></i>
+        <i
+          class="fa-brands fa-square-x-twitter fa-2x"
+          style="color: #5d5d5f"
+        ></i>
+        <i
+          class="fa-brands fa-square-instagram fa-2x"
+          style="color: #5d5d5f"
+        ></i>
+        <i class="fa-brands fa-youtube fa-2x" style="color: #5d5d5f"></i>
+        <i class="fa-brands fa-pinterest fa-2x" style="color: #5d5d5f"></i>
+        <i class="fa-brands fa-linkedin fa-2x" style="color: #5d5d5f"></i>
+      </div>
+
+      <p>
+        Copyright 2023 @ © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
+      </p>
+      <p>
+        The content and images used on this site are copyright protected and
+        copyrights vests with the respective owners. The usage of the content
+        and images on this website is intended to promote the works and no
+        endorsement of the artist shall be implied. Unauthorized use is
+        prohibited and punishable by law.
+      </p>
+    </div>
+  </body>
+</html>
